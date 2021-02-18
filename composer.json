@@ -1,0 +1,19 @@
+{
+    "name": "manishpanchal/contact",
+    "description": "This package send contact information on mail and save it to database",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Manish Panchal",
+            "email": "manishpanchal225@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Manishpanchal\\Contact\\": "src/"
+        }
+    }
+}
