@@ -26,20 +26,25 @@
                         <h5 class="card-title">Contact Us</h5>
                     </div>
                     <div class="card-body">
+                        @if(session('success'))
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong>Success!</strong> {{ session('success') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        @endif
                         <form action="{{ route('contact.send') }}" method="post">
                             @csrf
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" name="name" class="form-control">
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Password</label>
-                                <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" name="email" class="form-control">
                             </div>
-                            <div class="mb-3 form-check">
-                                <input name="checkme" value="1" type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea name="message" id="message" class="form-control"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>

@@ -9,10 +9,14 @@ class ContactServiceProvider extends ServiceProvider
     {
        $this->loadRoutesFrom(__DIR__.'/routes/web.php');
        $this->loadViewsFrom(__DIR__.'/views','contact');
+       $this->loadMigrationsFrom(__DIR__.'/database/migrations');
     }    
 
     public function register()
     {
-        
+        $this->mergeConfigFrom(
+            __DIR__ . '/config/contact.php',
+            'contact'
+        );
     }
 }
